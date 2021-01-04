@@ -15,7 +15,7 @@ This API is tested using [Postman](https://www.postman.com/).
 - Download/Clone the project from git.
 - Open terminal inside the project location.
 - Use <code>mvn package cargo:run</code> to run the project.
-- Open Postman and use following commands to get, post, put and delete an information:<br/>
+- Open Postman and use following commands to get, post, put and delete an employee:<br/>
   1. To get information of all the employees- <code>GET: http://localhost:8080/EmployeeApp/getEmployees</code>
   2. To get information of an employee- <code>GET: http://localhost:8080/EmployeeApp/getEmployee/{employeeId}</code>
   3. To add an employee(give the employee JSON object in body)- <code>POST: http://localhost:8080/EmployeeApp/addEmployee</code>
