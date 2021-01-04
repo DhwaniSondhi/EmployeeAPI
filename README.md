@@ -1,7 +1,7 @@
 # Employee Rest API
 This API was created to learn and practice the basics of [spring-rest-service](https://spring.io/guides/gs/rest-service/). It uses an XML-based configuration.
 The API allows to see the information of all employees or a specific one, add, edit, and delete an employee. 
-It has an embedded Tomcat configured in [pom.xml](https://github.com/DhwaniSondhi/EmployeeRest/blob/master/pom.xml).
+It has an embedded Tomcat configured in [pom.xml](https://github.com/DhwaniSondhi/EmployeeAPI/blob/master/pom.xml).
 This API is tested using [Postman](https://www.postman.com/).
 
 ## Prerequisites
