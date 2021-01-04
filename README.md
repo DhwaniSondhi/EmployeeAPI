@@ -12,7 +12,7 @@ This API is tested using [Postman](https://www.postman.com/).
 - Postman
 
 ## How to run?
-- Download the project from git.
+- Download/Clone the project from git.
 - Open terminal inside the project location.
 - Use <code>mvn package cargo:run</code> to run the project.
 - Open Postman and use following commands to get, post, put and delete an information:<br/>
