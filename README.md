@@ -12,13 +12,13 @@ It has an embedded Tomcat configured in [pom.xml](https://github.com/DhwaniSondh
 
 ## How to run?
 - Download/Clone the project from git.
-- In MySQL, create a database named as "practice" or change the url in [front-servlet.xml](https://github.com/DhwaniSondhi/EmployeeAPI/blob/master/src/main/webapp/WEB-INF/front-servlet.xml).
+- In MySQL, create a database named "practice" or change the URL in [front-servlet.xml](https://github.com/DhwaniSondhi/EmployeeAPI/blob/master/src/main/webapp/WEB-INF/front-servlet.xml).
 - In the database, create a table with the command given in [createTable.txt](https://github.com/DhwaniSondhi/EmployeeAPI/blob/master/createTable.txt).
 - Open the terminal.
 - Use <code>mvn package cargo:run</code> to run the project.
-- Open Postman and use the following commands to get, post, put and delete an employee:<br/>
+- Open Postman and use the following commands to get, post, put, and delete an employee:<br/>
   1. To get the information of all the employees- <code>GET: http://localhost:8080/EmployeeApp/getEmployees</code>
   2. To get the information of a specific employee- <code>GET: http://localhost:8080/EmployeeApp/getEmployee/{employeeId}</code>
-  3. To add an employee(give the employee JSON object in body)- <code>POST: http://localhost:8080/EmployeeApp/createEmployee</code>
-  4. To edit an employee(give the employee JSON object in body)- <code>PUT: http://localhost:8080/EmployeeApp/updateEmployee/{employeeId}</code>
+  3. To create an employee(give the employee JSON object in the body)- <code>POST: http://localhost:8080/EmployeeApp/createEmployee</code>
+  4. To update an employee(give the employee JSON object in the body)- <code>PUT: http://localhost:8080/EmployeeApp/updateEmployee/{employeeId}</code>
   5. To delete an employee- <code>DELETE: http://localhost:8080/EmployeeApp/deleteEmployee/{employeeId}</code>
