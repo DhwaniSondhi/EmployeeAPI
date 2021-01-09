@@ -7,10 +7,13 @@ It has an embedded Tomcat configured in [pom.xml](https://github.com/DhwaniSondh
 - Eclipse IDE
 - GIT
 - Maven Plugin
+- MySQL
 - Postman
 
 ## How to run?
 - Download/Clone the project from git.
+- In MySQL, create a database named as "practice" or change the url in [front-servlet.xml](https://github.com/DhwaniSondhi/EmployeeAPI/blob/master/src/main/webapp/WEB-INF/front-servlet.xml).
+- In the database, create a table with the command given in [createTable.txt](https://github.com/DhwaniSondhi/EmployeeAPI/blob/master/createTable.txt).
 - Open the terminal.
 - Use <code>mvn package cargo:run</code> to run the project.
 - Open Postman and use the following commands to get, post, put and delete an employee:<br/>
