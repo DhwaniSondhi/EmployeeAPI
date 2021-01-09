@@ -1,67 +1,43 @@
 package org.prac.services;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+import org.prac.dao.EmployeeJdbcTemplate;
 import org.prac.models.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class EmployeeService {
 
-	private HashMap<String, Employee> employees;
-
-	public EmployeeService() {
-		System.out.println("I am in");
-		if(employees==null ||  employees.size()==0) {
-			this.employees=new HashMap<String, Employee>();
-			this.employees.put("1244062", new Employee.EmployeeBuilder()
-					.setId("1244062")
-					.setfName("Dhwani")
-					.setlName("Sondhi")
-					.setRole("Developer")
-					.setPhoneNum("9999999999")
-					.build());
-			
-			this.employees.put("1244063", new Employee.EmployeeBuilder()
-					.setId("1244063")
-					.setfName("Sahaj")
-					.setlName("Sondhi")
-					.setRole("Manager")
-					.setPhoneNum("0000000000")
-					.build());
-			
-			this.employees.put("1244064", new Employee.EmployeeBuilder()
-					.setId("1244064")
-					.setfName("Tans")
-					.setlName("Singh")
-					.setRole("TL")
-					.setPhoneNum("4444444444")
-					.build());
-		}
-	}
+	@Autowired
+	private EmployeeJdbcTemplate employeeJdbcTemplate;
 
 	public List<Employee> getEmployees() {
-		return new ArrayList<Employee>(this.employees.values());
+		return this.employeeJdbcTemplate.getEmployees();
 	}
 
 	public Employee getEmployee(String id) {
-		return this.employees.get(id);
+		return this.employeeJdbcTemplate.getEmployee(id);
 	}
 
-	public Employee addEmployee(Employee employee) {
-		this.employees.put(employee.getId(), employee);
-		return this.employees.get(employee.getId());
+	/*
+	 * Trasaction needs to be in service layer
+	 * Answer 1 and 3 for why?
+	 */
+	@Transactional
+	public void createEmployee(Employee employee) {
+		this.employeeJdbcTemplate.createEmployee(employee);		
 	}
 
-	public Employee editEmployee(Employee employee) {
-		this.employees.put(employee.getId(), employee);
-		return this.employees.get(employee.getId());
+	@Transactional
+	public void updateEmployee(Employee employee) {
+		this.employeeJdbcTemplate.updateEmployee(employee);
 	}
 
+	@Transactional
 	public void deleteEmployee(String id) {
-		this.employees.remove(id);
+		this.employeeJdbcTemplate.deleteEmployee(id);
 	}
 }
