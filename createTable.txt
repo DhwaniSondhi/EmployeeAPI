@@ -1,0 +1,8 @@
+create table employee(
+	id varchar(10),
+    fName varchar(25),
+    lName varchar(25),
+    role varchar(25),
+    phoneNum varchar(25),
+    PRIMARY KEY (ID)
+);	
